@@ -8,17 +8,22 @@
 
 dicAlumnos = {}
 numAlumnos = int(input('Ingresa el número de alumnos: '))
-i = 0
-if numAlumnos > 0 and i < numAlumnos:
-    for contador in range(numAlumnos):
-        nuevoAlumnoNom = str(input('Ingresa el nombre del alumno: '))
-        nuevaCalif = int(input('Ingresa sus notas, termina ingresando numero negativo(-): '))
-        if(nuevaCalf => 0)
-            califAlumno = []
-            califAlumno.append(nuevaCalif)
-            dicAlumnos[nuevoAlumnoNom] = califAlumno
 
-#hola = 'Hola mundo'
-#i = 90
-#dicAlumnos[hola] = i
-#print(dicAlumnos)
+for cantidad in range(numAlumnos):
+    alumno = str(input('Introduce el nombre del alumno: '))
+
+    while alumno in dicAlumnos:
+        print('Alumno ya registrado.')
+        alumno = str(input('Introduce el nombre del alumno: '))
+
+    calificaciones = []
+    nota = float(input('Introduce una nota (numero negativo para terminar): '))
+
+    while nota >= 0:
+        calificaciones.append(nota)
+        nota = float(input('Introduce una nota (numero negativo para terminar): '))
+
+    dicAlumnos[alumno] = calificaciones.copy()
+
+for alumno, calificaciones in dicAlumnos.items():
+    print(alumno, ' ha sacado de nota media ',"{0:.2f}".format(sum(calificaciones)/len(calificaciones)))
