@@ -7,8 +7,8 @@ def repetir(repeat):
     elif repeat == 'n':
         return False
 
-i = True
-while i == True:
+r = True
+while r == True:
     lista = [1,2,3,4]
 
     for i in  lista:
@@ -16,7 +16,7 @@ while i == True:
             print(i, ' + ', j , ' = ', i+j)
 
     rep = input('¿Intentar de nuevo? (y/n) ')
-    i = repetir(rep)
-    while i == None:
+    r = repetir(rep)
+    while r == None:
         rep = input('¿Intentar de nuevo? (y/n) ')
-        i = repetir(rep)
+        r = repetir(rep)
